@@ -42,6 +42,37 @@
     });
   });
 
+  var courseTabs = document.querySelector("#courses [role='tablist']");
+  var subjects = Array.from(courseTabs.querySelectorAll("[role='tab']"));
+  var activeSubject = courseTabs.querySelector("[aria-selected='true']");
+  function selectSubject(subject){
+    if (subject === activeSubject) return;
+    activeSubject.setAttribute("aria-selected", "false");
+    activeSubject.tabIndex = -1;
+    document.getElementById(activeSubject.getAttribute("aria-controls")).hidden = true;
+    subject.setAttribute("aria-selected", "true");
+    subject.tabIndex = 0;
+    document.getElementById(subject.getAttribute("aria-controls")).hidden = false;
+    activeSubject = subject;
+  }
+  subjects.forEach(function(subject, index){
+    subject.addEventListener("click", function(){ selectSubject(subject); });
+    subject.addEventListener("keydown", function(event){
+      var next;
+      switch (event.key) {
+        case "ArrowLeft": next = (index + subjects.length - 1) % subjects.length; break;
+        case "ArrowRight": next = (index + 1) % subjects.length; break;
+        case "Home": next = 0; break;
+        case "End": next = subjects.length - 1; break;
+        default: return;
+      }
+      event.preventDefault();
+      selectSubject(subjects[next]);
+      subjects[next].focus();
+    });
+  });
+  courseTabs.hidden = false;
+
   if ("IntersectionObserver" in window && !reduce) {
     var io = new IntersectionObserver(function(list){
       list.forEach(function(en){

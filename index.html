@@ -67,12 +67,42 @@
   </div>
 </section>
 
-<section class="campus-carousel" aria-label="武大外校校园影像">
-  <div class="wrap campus-carousel-inner">
+<section class="campus-carousel" aria-label="物语中学校园影像">
+  <div class="wrap">
     <div class="campus-carousel-frame">
-      <img class="campus-carousel-image" src="https://hbrbapp.hubeidaily.net/3e315c2dacbc468ca81c06c55bd921ec.jpg" alt="武大外校交流活动中，学生体验传统文化" loading="lazy">
-      <div class="campus-carousel-caption"><span>武大外校校园交流影像</span><a href="https://news.hubeidaily.net/pc/c_4729331.html">图片来源：湖北日报</a></div>
-      <button type="button" class="campus-prev" aria-label="上一张图片">‹</button><button type="button" class="campus-next" aria-label="下一张图片">›</button>
+      <figure class="campus-slide">
+        <img class="campus-carousel-image" src="./assets/images/campus-sports.webp" alt="学生在操场上打躲避球" width="692" height="390">
+        <figcaption class="campus-carousel-caption">
+          <span>物语中学 · 校园影像</span>
+          <a href="https://show.wuhaneduyun.cn/eschool/school/index/act-detail?cid=77&amp;f=eschool&amp;id=3985&amp;schoolId=dd06aeb4a2ec439f91b6832543d9f559">图片来源 · 武汉教育云</a>
+        </figcaption>
+      </figure>
+      <figure class="campus-slide" hidden>
+        <img class="campus-carousel-image" src="./assets/images/campus-classroom.webp" alt="学生从教室后排听讲" width="691" height="518" loading="lazy" decoding="async">
+        <figcaption class="campus-carousel-caption">
+          <span>物语中学 · 校园影像</span>
+          <a href="https://show.wuhaneduyun.cn/eschool/school/index/act-detail?cid=77&amp;f=eschool&amp;id=3985&amp;schoolId=dd06aeb4a2ec439f91b6832543d9f559">图片来源 · 武汉教育云</a>
+        </figcaption>
+      </figure>
+      <figure class="campus-slide" hidden>
+        <img class="campus-carousel-image" src="./assets/images/campus-dragon-dance.webp" alt="礼堂里的舞龙活动" width="1140" height="760" loading="lazy" decoding="async">
+        <figcaption class="campus-carousel-caption">
+          <span>物语中学 · 校园影像</span>
+          <a href="https://news.hubeidaily.net/pc/c_4729331.html">图片来源 · 湖北日报</a>
+        </figcaption>
+      </figure>
+      <figure class="campus-slide" hidden>
+        <img class="campus-carousel-image" src="./assets/images/campus-artwork.webp" alt="学生在展架前展示手工作品" width="1140" height="760" loading="lazy" decoding="async">
+        <figcaption class="campus-carousel-caption">
+          <span>物语中学 · 校园影像</span>
+          <a href="https://news.hubeidaily.net/pc/c_4729331.html">图片来源 · 湖北日报</a>
+        </figcaption>
+      </figure>
+      <div class="campus-carousel-controls" hidden>
+        <button type="button" class="campus-prev" aria-label="上一张图片">‹</button>
+        <button type="button" class="campus-next" aria-label="下一张图片">›</button>
+        <button type="button" class="campus-pause">暂停轮播</button>
+      </div>
     </div>
   </div>
 </section>
@@ -148,20 +178,101 @@
           创意写作是学校唯一的特色课程，每周两节，三年不断。它不是额外的加课，而是嵌进语文课的读与写里——
           读过的书成为写作的素材，写下的字成为下一次阅读的入口。
         </p>
-        <div class="tag-list">
-          <span>语文</span><span>数学</span><span>英语</span><span>道德与法治</span>
-          <span>历史</span><span>地理</span><span>生物</span><span>物理</span>
-          <span>化学</span><span>体育与健康</span><span>音乐</span><span>美术</span>
-          <span class="gold">创意写作</span>
+        <div class="tag-list" role="tablist" aria-label="课程科目" hidden>
+          <button type="button" id="course-tab-chinese" role="tab" aria-controls="course-chinese" aria-selected="false" tabindex="-1">语文</button>
+          <button type="button" id="course-tab-math" role="tab" aria-controls="course-math" aria-selected="false" tabindex="-1">数学</button>
+          <button type="button" id="course-tab-english" role="tab" aria-controls="course-english" aria-selected="false" tabindex="-1">英语</button>
+          <button type="button" id="course-tab-ethics" role="tab" aria-controls="course-ethics" aria-selected="false" tabindex="-1">道德与法治</button>
+          <button type="button" id="course-tab-history" role="tab" aria-controls="course-history" aria-selected="false" tabindex="-1">历史</button>
+          <button type="button" id="course-tab-geography" role="tab" aria-controls="course-geography" aria-selected="false" tabindex="-1">地理</button>
+          <button type="button" id="course-tab-biology" role="tab" aria-controls="course-biology" aria-selected="false" tabindex="-1">生物</button>
+          <button type="button" id="course-tab-physics" role="tab" aria-controls="course-physics" aria-selected="false" tabindex="-1">物理</button>
+          <button type="button" id="course-tab-chemistry" role="tab" aria-controls="course-chemistry" aria-selected="false" tabindex="-1">化学</button>
+          <button type="button" id="course-tab-pe" role="tab" aria-controls="course-pe" aria-selected="false" tabindex="-1">体育与健康</button>
+          <button type="button" id="course-tab-music" role="tab" aria-controls="course-music" aria-selected="false" tabindex="-1">音乐</button>
+          <button type="button" id="course-tab-art" role="tab" aria-controls="course-art" aria-selected="false" tabindex="-1">美术</button>
+          <button type="button" id="course-tab-writing" role="tab" aria-controls="course-writing" aria-selected="true">创意写作</button>
         </div>
       </div>
-      <ol class="modules rv">
-        <li class="module">
+      <ol class="modules rv" role="presentation">
+        <li class="module" id="course-writing" role="tabpanel" aria-labelledby="course-tab-writing" tabindex="0">
           <span class="n">01</span>
           <div>
             <h3>创意写作</h3>
             <p>学校唯一的特色课程，每周两节。从一句话开始，到完整的短篇；写作课不评分，只做两件事：读完，然后说出你记住了什么。文体随年级推进：随笔、短篇小说、非虚构、剧本、诗。</p>
             <p style="margin-top:10px">学期末每个学生交一份作品，收进班级文集。三年下来，学生手里会有一册属于自己的《物语》。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-chinese" role="tabpanel" aria-labelledby="course-tab-chinese" tabindex="0" hidden>
+          <div>
+            <h3>语文</h3>
+            <p>读到一段对话，先分清是谁在说话，再想想他为什么在这里停了一下。作文也从具体的事写起。写一次等车，就把车来之前那几分钟写清楚。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-math" role="tabpanel" aria-labelledby="course-tab-math" tabindex="0" hidden>
+          <div>
+            <h3>数学</h3>
+            <p>列式之前先把条件写全。几何题画一幅图，函数题先描几个点。有时用两种办法解同一道题，再看看哪一步其实可以省掉。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-english" role="tabpanel" aria-labelledby="course-tab-english" tabindex="0" hidden>
+          <div>
+            <h3>英语</h3>
+            <p>听一段对话，记下说话的人要去哪里、有什么事。练口语时，两人轮流问路和指路，也试着用几句英语介绍一本自己读过的书。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-ethics" role="tabpanel" aria-labelledby="course-tab-ethics" tabindex="0" hidden>
+          <div>
+            <h3>道德与法治</h3>
+            <p>先读案例，再找出它牵涉的规则。比如借来的书弄丢了，该同谁商量，怎样补偿，什么约定说在前面更合适。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-history" role="tabpanel" aria-labelledby="course-tab-history" tabindex="0" hidden>
+          <div>
+            <h3>历史</h3>
+            <p>把一段历史放回它的年月，再找一张地图和一两则史料。遇到两份记载说法不同，先看是谁写的、写于什么时候。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-geography" role="tabpanel" aria-labelledby="course-tab-geography" tabindex="0" hidden>
+          <div>
+            <h3>地理</h3>
+            <p>先学会看图例、方向和比例尺。用一张武汉地图沿着长江往下找，再去看江两岸的地势、道路和人住的地方。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-biology" role="tabpanel" aria-labelledby="course-tab-biology" tabindex="0" hidden>
+          <div>
+            <h3>生物</h3>
+            <p>在显微镜下看一片叶子，把能分辨的结构画下来。也会种几粒种子，分开记录光照、浇水和发芽的日子。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-physics" role="tabpanel" aria-labelledby="course-tab-physics" tabindex="0" hidden>
+          <div>
+            <h3>物理</h3>
+            <p>把小车放上斜面，量下它走过的距离和用掉的时间。同一组数据多测几回，有出入就回头检查刻度和读数。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-chemistry" role="tabpanel" aria-labelledby="course-tab-chemistry" tabindex="0" hidden>
+          <div>
+            <h3>化学</h3>
+            <p>做实验时先把看到的现象记下来，颜色、气泡和沉淀都算。再拿两组结果放在一起，试着用学过的反应解释差别。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-pe" role="tabpanel" aria-labelledby="course-tab-pe" tabindex="0" hidden>
+          <div>
+            <h3>体育与健康</h3>
+            <p>跑步、球类和体能练习轮着上。课前热身，课后记下自己的配速和体感，下一次再试一试怎样跑得更稳。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-music" role="tabpanel" aria-labelledby="course-tab-music" tabindex="0" hidden>
+          <div>
+            <h3>音乐</h3>
+            <p>先把拍子打稳，再跟着唱一段旋律。练合唱时各声部先分开，合到一起之后，也要听得见身边的人。</p>
+          </div>
+        </li>
+        <li class="module course-subject" id="course-art" role="tabpanel" aria-labelledby="course-tab-art" tabindex="0" hidden>
+          <div>
+            <h3>美术</h3>
+            <p>从教室里的一把椅子开始画，先看比例，再看光从哪一边来。换张纸也可以做版画或剪贴，看看同一样东西还能怎样画。</p>
           </div>
         </li>
       </ol>
