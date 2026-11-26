@@ -374,3 +374,46 @@
 .campus-pause{position:absolute;top:12px;right:12px;padding:7px 10px;background:rgba(16,34,60,.82);border:1px solid rgba(255,255,255,.6);color:white;font:inherit;font-size:12px;cursor:pointer}
 .campus-carousel-frame :focus-visible{outline:2px solid white;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){.campus-carousel-image{animation:none}}
+
+/* 留言簿 */
+.guestbook{background:var(--paper-2)}
+.guestbook-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px}
+.guestbook-form label{display:block;margin:0 0 6px;color:var(--navy);font-size:14px;font-weight:600}
+.guestbook-form input,.guestbook-form textarea{
+  display:block;width:100%;margin:0 0 16px;padding:10px 12px;border:1px solid var(--line);
+  background:var(--paper);color:var(--ink);font:inherit;font-size:16px;border-radius:2px
+}
+.guestbook-form textarea{resize:vertical;min-height:112px}
+.guestbook-form button{font:inherit;cursor:pointer}
+.guestbook-form button:disabled{opacity:.65;cursor:default}
+.guestbook-status{margin:0;color:#5a6376;font-size:14px;line-height:1.7}
+.guestbook-form .guestbook-status:not(:empty){margin-top:12px}
+.guestbook-messages{list-style:none;margin:0;padding:0}
+.guestbook-messages li{padding:15px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.guestbook-messages li:first-child{padding-top:0}
+.guestbook-messages strong{color:var(--navy);font-family:var(--serif);font-size:16px}
+.guestbook-messages time{margin-left:10px;color:var(--muted);font-size:12px;white-space:nowrap}
+.guestbook-messages li p{margin:7px 0 0;color:#4d5669;font-size:14.5px;white-space:pre-wrap}
+@media(max-width:940px){.guestbook-grid{grid-template-columns:1fr;gap:28px}}
+
+/* 首屏、换图和选课 */
+@media(prefers-reduced-motion:no-preference){
+  .hero-grid > :first-child > *{animation:page-rise .68s cubic-bezier(.2,.7,.3,1) both}
+  .hero-grid h1{animation-delay:.08s}
+  .hero-grid .h1-en{animation-delay:.14s}
+  .hero-grid .lede{animation-delay:.2s}
+  .hero-grid .btns{animation-delay:.26s}
+  .crest .halo{animation:crest-light 5s ease-in-out 2 alternate}
+  .campus-carousel-image{animation:campus-photo-in .48s ease both,campus-photo-drift 6s ease-out both}
+  .campus-carousel-caption{animation:page-rise .46s .08s ease both}
+  .module:not([hidden]) > div{animation:page-rise .32s ease both}
+  .people > .person:nth-child(2){transition-delay:.06s}
+  .people > .person:nth-child(3){transition-delay:.12s}
+  .people > .person:nth-child(4){transition-delay:.18s}
+  .classroom-gallery a{transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
+  .classroom-gallery a:is(:hover,:focus-visible){transform:translateY(-3px);box-shadow:0 9px 18px rgba(16,34,60,.13)}
+  .guestbook-messages li{animation:page-rise .35s ease both}
+}
+@keyframes page-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes crest-light{from{opacity:.68;transform:scale(.93)}to{opacity:1;transform:scale(1.08)}}
+@keyframes campus-photo-drift{from{transform:scale(1)}to{transform:scale(1.035)}}

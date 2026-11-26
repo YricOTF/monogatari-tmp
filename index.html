@@ -28,6 +28,7 @@
       <a href="#students">学生风采</a>
       <a href="#alumni">校友作品</a>
       <a href="#admit">招生信息</a>
+      <a href="#guestbook">留言</a>
       <a class="nav-cta" href="#admit">联系我们</a>
     </nav>
     <button class="burger" id="burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="drawer"><span></span></button>
@@ -40,6 +41,7 @@
   <a href="#students">学生风采</a>
   <a href="#alumni">校友作品</a>
   <a href="#admit">招生信息</a>
+  <a href="#guestbook">留言</a>
 </nav>
 
 <!-- ===== 首屏 ===== -->
@@ -533,6 +535,32 @@
   </div>
 </section>
 
+<!-- ===== 留言 ===== -->
+<section class="guestbook" id="guestbook" aria-labelledby="guestbook-title">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 id="guestbook-title">留言簿</h2>
+      <p>读过哪一篇，想起了什么，都可以留几句话。留言通过审核后会在这里显示。</p>
+    </div>
+    <div class="guestbook-grid">
+      <form id="guestbook-form" class="fact-card guestbook-form rv">
+        <label for="guestbook-nickname">署名</label>
+        <input id="guestbook-nickname" name="nickname" autocomplete="nickname" maxlength="24" required>
+        <label for="guestbook-message">留言</label>
+        <textarea id="guestbook-message" name="message" rows="5" maxlength="360" required></textarea>
+        <div hidden><label for="guestbook-company">公司</label><input id="guestbook-company" name="company" tabindex="-1" autocomplete="off"></div>
+        <button type="submit" class="btn btn-primary" disabled>提交留言</button>
+        <p class="guestbook-status" role="status" id="guestbook-form-status"></p>
+        <noscript><p>请开启 JavaScript 后提交留言。</p></noscript>
+      </form>
+      <div class="guestbook-entries rv" aria-label="公开留言">
+        <p class="guestbook-status" role="status" id="guestbook-list-status">正在读取留言。</p>
+        <ol id="guestbook-messages" class="guestbook-messages"></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== 页脚 ===== -->
 <footer>
   <div class="wrap">
@@ -550,6 +578,7 @@
         <a href="#students">学生风采</a>
         <a href="#alumni">校友作品</a>
         <a href="#admit">招生信息</a>
+        <a href="#guestbook">留言</a>
       </nav>
     </div>
     <div class="foot-bot">
@@ -561,5 +590,6 @@
 
 <script src="./assets/site.js" defer></script>
 <script src="./assets/carousel.js" defer></script>
+<script src="./assets/guestbook.js" defer></script>
 </body>
 </html>
