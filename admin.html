@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>留言审核 · 物语中学</title>
+  <link rel="stylesheet" href="./assets/admin.css">
+  <script src="./assets/admin.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <a href="./">物语中学</a>
+      <h1>留言审核</h1>
+    </header>
+    <form id="login">
+      <label for="password">审核密码</label>
+      <input id="password" type="password" inputmode="numeric" autocomplete="current-password" pattern="[0-9]{6}" maxlength="6" required>
+      <button type="submit">登录</button>
+    </form>
+    <noscript><p>请开启 JavaScript 后审核留言。</p></noscript>
+    <div id="moderation" hidden>
+      <div class="toolbar">
+        <button id="pending" type="button" aria-pressed="true">待审核</button>
+        <button id="published" type="button" aria-pressed="false">已公开</button>
+        <button id="refresh" type="button">刷新</button>
+        <button id="logout" type="button">退出</button>
+      </div>
+      <ol id="messages" aria-label="留言列表"></ol>
+      <nav class="paging" aria-label="留言分页" hidden>
+        <button id="previous" type="button">上一页</button>
+        <button id="next" type="button">下一页</button>
+      </nav>
+    </div>
+    <p id="status" role="status"></p>
+  </main>
+</body>
+</html>
